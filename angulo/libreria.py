@@ -109,22 +109,6 @@ def pedir_postal(numero):
         return (numero)
 
 
-def validar_entero(entero):
-    # vereficar si el numero es entero
-    if(isinstance(entero,int)):
-        # verificar si es entero positivo
-        if (entero>=0):
-            return True
-        else:
-            # si no es positivo retornar false
-            return False
-
-    else:
-        # si no es entero return False
-        return False
-    #fin_if
-#fin_def
-
 def pedir_entero(msg):
     n=-1
     while(validar_entero(n)==False):
@@ -134,14 +118,10 @@ def pedir_entero(msg):
 # fin_def
 
 def validar_cadena(cadena):
-    # vereficar si el numero es entero
+
     if(isinstance(cadena,str)):
-        # verificar si es entero positivo
-        if (cadena>=0):
-            return True
-        else:
-            # si no es positivo retornar false
-            return False
+
+        return True
 
     else:
         # si no es cadena return False
@@ -160,14 +140,19 @@ def pedir_cadena(msg):
 
 def validar_nombre(nombre):
     # vereficar si el numero es entero
-    if(nombre.isdigit==True and len(nombre)>=3):
-      return False
+    if(isinstance(nombre,str)):
+
+        if (len(nombre)>=3 and nombre.isdigit()==False):
+            return True
+        else:
+            return False
 
     else:
-      return False
-
+        # si no es cadena return False
+        return False
     #fin_if
 #fin_def
+
 
 def pedir_nombre(msg):
     n=-1
